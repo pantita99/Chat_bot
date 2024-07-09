@@ -1,7 +1,7 @@
 import os
 from flask import Flask, request, abort, jsonify
 import mysql.connector
-import messagemodel
+import kong.Diw.messagemodel_kong as messagemodel_kong
 import helper
 import pickle
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -27,11 +27,11 @@ def Factories():
             try:
                 message = data_load["Msg"]
                 #ask = selectaskuser(userID)
-                if (message in messagemodel.greating):
+                if (message in messagemodel_kong.greating):
                     #text_message = helper.sendtext(userID,folderpath, messagetype,messagemodel.greating_out)
-                    text_message = messagemodel.greating_out
+                    text_message = messagemodel_kong.greating_out
                     return text_message
-                elif (message in messagemodel.Text_gas):
+                elif (message in messagemodel_kong.Text_gas):
                     #text_message = helper.sendtext(userID, folderpath, messagetype, "คุณกำลังติดต่อเรื่องก๊าซ")
                     text_message = "คุณกำลังติดต่อเรื่องก๊าซ"
                     print("test")
@@ -44,10 +44,10 @@ def Factories():
                         current_datetime = datetime.datetime.now()
                         Time = thai_strftime(current_datetime, "%A %d %B %Y ")
                         print(Time)
-                        text_message = random.choice(messagemodel.time_output)%Time
+                        text_message = random.choice(messagemodel_kong.time_output)%Time
                         return text_message
                     elif(results == "Greet"):
-                        text_message = messagemodel.greating_out
+                        text_message = messagemodel_kong.greating_out
                         return text_message
                     elif(results == "Ainame"):
                         text_message = "ผมคือผู้ช่วยของกรมโรงงานค่ะ"
