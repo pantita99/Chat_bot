@@ -33,7 +33,7 @@ def Factories():
                     return text_message
                 elif (message in messagemodel.Text_gas):
                     #text_message = helper.sendtext(userID, folderpath, messagetype, "คุณกำลังติดต่อเรื่องก๊าซ")
-                    text_message = "คุณกำลังติดต่อเรื่องก๊าซ"
+                    text_message = "คุณกำลังดำเนินการติดต่อเรื่องก๊าซ"
                     return text_message
                 else:
                     #return "เรื่องที่คุณสอบถามกำลังนำเข้าระบบเพื่อประมวลผล ติดต่อกลับภายหลังนะคะ"
