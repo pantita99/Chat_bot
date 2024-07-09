@@ -31,11 +31,36 @@ def Factories():
                     #text_message = helper.sendtext(userID,folderpath, messagetype,messagemodel.greating_out)
                     text_message = messagemodel.greating_out
                     return text_message
-                elif (message in messagemodel.Text_gas):
-                    #text_message = helper.sendtext(userID, folderpath, messagetype, "คุณกำลังติดต่อเรื่องก๊าซ")
-                    text_message = "คุณกำลังดำเนินการติดต่อเรื่องก๊าซ"
+                elif (message in messagemodel.law):
+                    text_message = messagemodel.law_out
                     return text_message
-                else:
+                elif (message in messagemodel.accountlaw):
+                    text_message = messagemodel.accountlaw_out
+                    return text_message
+                elif (message in messagemodel.Verifylaw):
+                    text_message = messagemodel.Verifylaw_out 
+                    return text_message
+                elif (message in messagemodel.allegationlaw):
+                    text_message = messagemodel.allegationlaw_out
+                    return text_message
+                elif (message in messagemodel.Extendtimelaw):
+                    text_message = messagemodel.Extendtimelaw_out
+                    return text_message
+                elif (message in messagemodel.notagree):
+                    text_message = messagemodel.notagree_out
+                    return text_message
+                elif (message in messagemodel.paylaw):
+                    text_message = messagemodel.paylaw_out
+                    return text_message
+                elif (message in messagemodel.howtopayment):
+                    text_message = messagemodel.Paymentlaw_out  
+                    return text_message
+                elif (message in messagemodel.Receiptlaw):
+                    text_message = messagemodel.Receiptlaw_out
+                    return text_message        
+                else : 
+                
+                    
                     #return "เรื่องที่คุณสอบถามกำลังนำเข้าระบบเพื่อประมวลผล ติดต่อกลับภายหลังนะคะ"
                     results = predict_first_model(message)
                     if(results == "AskDate"):
